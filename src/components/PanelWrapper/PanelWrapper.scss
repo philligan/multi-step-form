@@ -1,0 +1,21 @@
+@import "../../styles/functions";
+@import "../../styles/fonts";
+
+.panel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background-color: var(--color-white);
+  border-radius: 10px;
+}
+
+.panel-wrapper__title {
+  margin: 0;
+  font-size: $font-size-xl;
+}
+
+.panel-wrapper__desc {
+  margin: 0;
+}

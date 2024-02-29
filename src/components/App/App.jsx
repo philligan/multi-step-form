@@ -1,0 +1,36 @@
+import '../../styles/_colors.scss';
+import '../../styles/_functions.scss';
+import '../../styles/_page.scss';
+import '../../styles/_units.scss';
+
+import Button from '../Button/Button';
+import FieldLabel  from '../FieldLabel/FieldLabel';
+import FormWrapper from '../FormWrapper/FormWrapper';
+import InputField from '../InputField/InputField';
+import PanelWrapper from '../PanelWrapper/PanelWrapper';
+
+function App() {
+  return (
+    <>
+      <PanelWrapper title='Personal info' desc='Please provide your name, email address, and phone number.'>
+        <FormWrapper>
+          <FieldLabel>Name</FieldLabel>
+          <InputField />
+          <FieldLabel>Email</FieldLabel>
+          <InputField />
+          <FieldLabel>Phone</FieldLabel>
+          <InputField />
+          <Button type='submit'>Test</Button>
+        </FormWrapper>
+      </PanelWrapper>
+      <PanelWrapper title='Select your plan' desc='You have the option of monthly or yearly billing.'>
+      </PanelWrapper>
+      <PanelWrapper title='Pick add-ons' desc='Add-ons help enhance your gaming experience.'>
+      </PanelWrapper>
+      <PanelWrapper title='Finishing up' desc='Double-check everything looks OK before confirming.'>
+      </PanelWrapper>
+    </>
+  );
+}
+
+export default App;

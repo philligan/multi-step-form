@@ -1,0 +1,12 @@
+input {
+  display: block;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  border: 1px solid var(--color-bg-border, grey);
+  border-radius: 8px;
+  color: var(--color-primary, red);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium, 400);
+  line-height: 25px;
+}
