@@ -1,3 +1,22 @@
+@use 'sass:math';
+@import "../../styles/functions";
+
 .button {
-  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+  padding: px-to-rem(14) px-to-rem(24);
+  background-color: var(--color-primary);
+  border: 0;
+  border-radius: 8px;
+  color: var(--color-white);
+  font-family: Ubuntu, sans-serif;
+  font-size: px-to-rem(16);
+  font-weight: var(--font-weight-semi);
+  line-height: math.div(18, 16);
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: var(--color-secondary-button);
+  }
 }

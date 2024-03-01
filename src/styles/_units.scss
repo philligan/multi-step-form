@@ -1,9 +1,9 @@
 @import './functions';
 
 :root{
-  --spacing-xs: #{px-to-rem(3px)};
-  --spacing-sm: #{px-to-rem(6px)};
-  --spacing-md: #{px-to-rem(12px)};
-  --spacing-lg: #{px-to-rem(24px)};
-  --spacing-xl: #{px-to-rem(32px)};
+  --spacing-xs: #{px-to-rem(3)};
+  --spacing-sm: #{px-to-rem(6)};
+  --spacing-md: #{px-to-rem(12)};
+  --spacing-lg: #{px-to-rem(24)};
+  --spacing-xl: #{px-to-rem(32)};
 }
