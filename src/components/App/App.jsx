@@ -9,28 +9,33 @@ import FieldLabel  from '../FieldLabel/FieldLabel';
 import FormWrapper from '../FormWrapper/FormWrapper';
 import InputField from '../InputField/InputField';
 import PanelWrapper from '../PanelWrapper/PanelWrapper';
+import Stepper from '../Stepper/Stepper';
+import StepWrapper from '../StepWrapper/StepWrapper';
 
 function App() {
   return (
     <>
-      <PanelWrapper title='Personal info' desc='Please provide your name, email address, and phone number.'>
-        <FormWrapper>
-          <div>
-            <FieldLabel>Name</FieldLabel>
-            <InputField />
-          </div>
-          <div>
-            <FieldLabel>Email</FieldLabel>
-            <InputField />
-          </div>
-          <div>
-            <FieldLabel>Phone</FieldLabel>
-            <InputField />
-          </div>
-          <div>
-            <Button type='submit'>Next step</Button>
-          </div>
-        </FormWrapper>
+      <PanelWrapper>
+        <Stepper />
+        <StepWrapper title='Select your plan' desc='Please provide your name, email address, and phone number.'>        
+          <FormWrapper>
+            <div>
+              <FieldLabel>Name</FieldLabel>
+              <InputField />
+            </div>
+            <div>
+              <FieldLabel>Email</FieldLabel>
+              <InputField />
+            </div>
+            <div>
+              <FieldLabel>Phone</FieldLabel>
+              <InputField />
+            </div>
+            <div>
+              <Button type='submit'>Next step</Button>
+            </div>
+          </FormWrapper>
+        </StepWrapper>
       </PanelWrapper>
 
       {/* TODO: Hook up other step panels */}
