@@ -12,6 +12,7 @@ function PersonalInfo() {
   const [state, setState] = useAppState();
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }  } = useForm({
+    defaultValues: state,
     mode: "onBlur"
   });
   const saveData = (data) => {
@@ -72,7 +73,7 @@ function PersonalInfo() {
 
         {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
         <div className="form-wrapper__actions">        
-          <Button type="submit">Next step</Button>
+          <Button style="primary" type="submit">Next step</Button>
         </div>
       </FormWrapper>
     </StepWrapper>

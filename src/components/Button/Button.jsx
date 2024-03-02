@@ -1,11 +1,12 @@
 import './Button.scss';
 
-function Button({ children, type }) {
+function Button({ children, style, type }) {
+  const className = `button button--${style}`
+
   return (
-    <button className="button" type={type}>
+    <button className={className} type={type}>
       {children}
-    </button>
-    
+    </button>    
   );
 }
 

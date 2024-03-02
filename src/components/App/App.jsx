@@ -6,12 +6,15 @@ import '../../styles/_units.scss';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppProvider } from '../../state';
+
+import AddOns from '../../pages/AddOns';
 import PersonalInfo from '../../pages/PersonalInfo';
 import SelectPlan from '../../pages/SelectPlan';
-// import FormWrapper from '../FormWrapper/FormWrapper';
+import Summary from '../../pages/Summary';
+
 import PanelWrapper from '../PanelWrapper/PanelWrapper';
 import Stepper from '../Stepper/Stepper';
-// import StepWrapper from '../StepWrapper/StepWrapper';
+
 
 function App() {
   return (
@@ -22,24 +25,11 @@ function App() {
           <Routes>
             <Route path="/" element={<PersonalInfo />} />
             <Route path="/select-plan" element={<SelectPlan />} />
+            <Route path="/add-ons" element={<AddOns />} />
+            <Route path="/summary" element={<Summary />} />
           </Routes>
         </Router>
       </PanelWrapper>
-      {/* 
-      <PanelWrapper>
-        <Stepper />
-        <StepWrapper title='Select your plan' desc='Please provide your name, email address, and phone number.'>        
-          <FormWrapper />        
-        </StepWrapper>
-      
-      <StepWrapper title='Select your plan' desc='You have the option of monthly or yearly billing.'>
-      </StepWrapper>
-      <StepWrapper title='Pick add-ons' desc='Add-ons help enhance your gaming experience.'>
-      </StepWrapper>
-      <StepWrapper title='Finishing up' desc='Double-check everything looks OK before confirming.'>
-      </StepWrapper> 
-      </PanelWrapper>
-      */}
     </AppProvider>
   );
 }
