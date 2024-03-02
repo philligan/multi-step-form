@@ -1,7 +1,13 @@
+@import "../../styles/breakpoints";
+
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md)
+  gap: var(--spacing-md);
+
+  @media (width > $mq-lg) {    
+    height: 100%;
+  }
 }
 
 .form-wrapper__actions {
@@ -10,5 +16,9 @@
   
   &:has(:only-child) {
     justify-content: flex-end;
+  }
+
+  @media (width > $mq-lg) {
+    margin-top: auto;
   }
 }

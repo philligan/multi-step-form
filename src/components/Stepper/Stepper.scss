@@ -40,10 +40,15 @@
     color: var(--color-white);
   }
 
+  &[aria-current="complete"]::before,
   &[aria-current="step"]::before  {
     background-color: var(--color-accent-light);
     border-color: var(--color-accent-light);
     color: var(--color-primary);
+  }
+
+  &[aria-current="complete"]::before  {
+    opacity: 0.5;
   }
 
   @media (width > $mq-lg) {    

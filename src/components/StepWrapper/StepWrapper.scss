@@ -14,7 +14,8 @@
 
   @media (width > $mq-lg) {
     margin: 0;
-    padding: 0;
+    padding: var(--spacing-xl) var(--spacing-xxl);
+    height: 100%;
   }
 }
 
