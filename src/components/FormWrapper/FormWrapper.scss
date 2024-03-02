@@ -3,3 +3,12 @@
   flex-direction: column;
   gap: var(--spacing-md)
 }
+
+.form-wrapper__actions {
+  display: flex;
+  justify-content: space-between;
+  
+  &:has(:only-child) {
+    justify-content: flex-end;
+  }
+}
