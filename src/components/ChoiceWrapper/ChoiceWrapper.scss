@@ -1,0 +1,18 @@
+@import '../../styles/functions';
+@import '../../styles/breakpoints';
+
+.choice-wrapper {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice-wrapper__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+
+  @media (width > $mq-lg) {
+    flex-direction: row;
+  }
+}

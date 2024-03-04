@@ -7,7 +7,6 @@
 }
 
 .input-field__label {
-
 }
 
 .input-field__error {
@@ -28,6 +27,6 @@
   font-weight: var(--font-weight-medium, 400);
 
   &--error {
-   --border-color: var(--color-error);
+    --border-color: var(--color-error);
   }
 }
