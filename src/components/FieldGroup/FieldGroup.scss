@@ -12,7 +12,9 @@
   flex-direction: column;
   gap: var(--spacing-md);
 
-  @media (width > $mq-lg) {
-    flex-direction: row;
+  &--row {
+    @media (width > $mq-lg) {
+      flex-direction: row;
+    }
   }
 }

@@ -7,7 +7,7 @@ import Button from '../components/Button/Button';
 import FormWrapper from '../components/FormWrapper/FormWrapper';
 import StepWrapper from '../components/StepWrapper/StepWrapper';
 import RadioField from '../components/RadioField/RadioField';
-import ChoiceWrapper from '../components/ChoiceWrapper/ChoiceWrapper';
+import FieldGroup from '../components/FieldGroup/FieldGroup';
 
 function SelectPlan() {
   const [state, setState] = useAppState();
@@ -33,7 +33,7 @@ function SelectPlan() {
   return (
     <StepWrapper title="Select your plan" desc="You have the option of monthly or yearly billing.">
       <FormWrapper onSubmit={handleSubmit(saveData)} onReset={resetData}>
-        <ChoiceWrapper legend="Plan options">
+        <FieldGroup legend="Plan options" direction="row">
           <RadioField
             id="plan-arcade"
             label="Arcade"
@@ -49,7 +49,7 @@ function SelectPlan() {
             value="advanced"
           />
           <RadioField id="plan-pro" label="Pro" name="plan" register={register} value="pro" />
-        </ChoiceWrapper>
+        </FieldGroup>
         {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
         <div className="form-wrapper__actions">
           <Button style="secondary" type="reset">

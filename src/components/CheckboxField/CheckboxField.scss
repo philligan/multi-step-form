@@ -1,0 +1,43 @@
+@import '../../styles/breakpoints';
+@import '../../styles/functions';
+
+.checkbox-field {
+  flex: 1;
+}
+
+.checkbox-field__label {
+  // TODO: Create mixin to share styles with radio
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm);
+  align-items: center;
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-bg-border);
+  border-radius: 0.5rem;
+  font-weight: var(--font-weight-semi);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  input:checked + & {
+    background-color: var(--color-secondary-lightest);
+    border: 1px solid var(--color-accent-one);
+  }
+}
+
+.checkbox-field__label-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-field__desc {
+  color: var(--color-grey);
+  font-size: px-to-rem(14);
+  font-weight: var(--font-weight-thin);
+}
+
+.checkbox-field__cost {
+  margin-left: auto;
+  color: var(--color-accent-one);
+  font-weight: var(--font-weight-thin);
+}
