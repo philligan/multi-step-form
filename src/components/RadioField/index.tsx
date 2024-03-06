@@ -1,6 +1,7 @@
 import './RadioField.scss';
+import { RadioFieldProps } from '../../types';
 
-function InputField({ id, label, name, register, value }) {
+function RadioField({ id, label, name, register, value }: RadioFieldProps) {
   function labelNode() {
     return (
       label && (
@@ -43,4 +44,4 @@ function InputField({ id, label, name, register, value }) {
   );
 }
 
-export default InputField;
+export default RadioField;

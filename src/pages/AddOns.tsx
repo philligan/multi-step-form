@@ -1,16 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-
 import { useAppState } from '../state';
-
-import Button from '../components/Button/Button';
-import FormWrapper from '../components/FormWrapper/FormWrapper';
-import FieldGroup from '../components/FieldGroup/FieldGroup';
-import StepWrapper from '../components/StepWrapper/StepWrapper';
-import CheckboxField from '../components/CheckboxField/CheckboxField';
+import { Button, CheckboxField, FieldGroup, FormWrapper, StepWrapper } from '../components';
 
 function AddOns() {
-  const [state, setState] = useAppState();
+  const [state, setState]:any = useAppState();
   const navigate = useNavigate();
   const {
     register,
@@ -21,10 +15,13 @@ function AddOns() {
     defaultValues: state,
     mode: 'onSubmit',
   });
-  const saveData = (data) => {
+
+  // TODO: Change from 'any' type
+  const saveData = (data: any) => {
     setState({ ...state, ...data });
     navigate('/summary');
   };
+  
   const resetData = () => {
     // reset();
     navigate('/select-plan');

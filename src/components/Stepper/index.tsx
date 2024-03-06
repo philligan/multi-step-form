@@ -1,5 +1,7 @@
 import './Stepper.scss';
 import { useLocation } from "react-router-dom";
+import { StepProps } from '../../types';
+
 
 function Stepper() {
   const location = useLocation();
@@ -31,7 +33,8 @@ function Stepper() {
   ]
   const activeIndex = routes.findIndex(route => route.url === location.pathname);
 
-  function ariaCurrent(stepIndex) {
+  // TODO: Replace 'any' return annotation ('complete' | 'step' | false)
+  function ariaCurrent(stepIndex: number): any {
     if (stepIndex < activeIndex) {
       return 'complete';
     } else if (stepIndex === activeIndex) {
@@ -41,7 +44,7 @@ function Stepper() {
   }
 
   function steps() {
-    return routes.map(function(step, stepIndex) {
+    return routes.map(function(step: StepProps, stepIndex: number) {
       return (
         <li aria-current={ariaCurrent(stepIndex)} className="stepper__item" key={step.id}>
           <span className='stepper__text'>

@@ -6,20 +6,13 @@ import '../../styles/_units.scss';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppProvider } from '../../state';
-
-import AddOns from '../../pages/AddOns';
-import PersonalInfo from '../../pages/PersonalInfo';
-import SelectPlan from '../../pages/SelectPlan';
-import Summary from '../../pages/Summary';
-
-import PanelWrapper from '../PanelWrapper/PanelWrapper';
-import Stepper from '../Stepper/Stepper';
-
+import { AddOns, PersonalInfo, SelectPlan, Summary } from '../../pages';
+import { PanelWrapper, Stepper } from '../../components';
 
 function App() {
   return (
     <AppProvider>
-      <PanelWrapper>
+       <PanelWrapper>
         <Router>        
           <Stepper />
           <Routes>

@@ -1,16 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-
 import { useAppState } from '../state';
-
-import Button from '../components/Button/Button';
-import FormWrapper from '../components/FormWrapper/FormWrapper';
-import StepWrapper from '../components/StepWrapper/StepWrapper';
-import RadioField from '../components/RadioField/RadioField';
-import FieldGroup from '../components/FieldGroup/FieldGroup';
+import {Button,FieldGroup, FormWrapper,  RadioField, StepWrapper} from '../components';
 
 function SelectPlan() {
-  const [state, setState] = useAppState();
+  const [state, setState]:any = useAppState();
   const navigate = useNavigate();
   const {
     register,
@@ -21,7 +15,9 @@ function SelectPlan() {
     defaultValues: state,
     mode: 'onSubmit',
   });
-  const saveData = (data) => {
+  
+  // TODO: Change from 'any' type
+  const saveData = (data: any) => {
     setState({ ...state, ...data });
     navigate('/add-ons');
   };

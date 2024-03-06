@@ -1,6 +1,7 @@
 import './InputField.scss';
+import { InputFieldProps } from "../../types";
 
-function InputField({ error, id, label, name, options, register, type }) {
+function InputField({ error, id, label, name, options, register, type }: InputFieldProps) {
   const errorId = `error-${id}`;
   const ariaDescribedBy = error ? errorId : null;
   const inputClassNames = error

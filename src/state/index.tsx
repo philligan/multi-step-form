@@ -1,8 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
+import { AppProviderProps } from "../types";
  
 export const AppStateContext = createContext({});
  
-export function AppProvider({ children }) {
+export function AppProvider({ children }: AppProviderProps) {
   const value = useState({
     plan: 'arcade'
   });

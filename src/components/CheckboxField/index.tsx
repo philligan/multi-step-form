@@ -1,6 +1,7 @@
 import './CheckboxField.scss';
+import { CheckboxProps } from "../../types";
 
-function CheckboxField({ desc, id, label, name, register, value }) {
+function CheckboxField({ desc, id, label, name, register, value }: CheckboxProps) {
   function labelNode() {
     return (
       label && (

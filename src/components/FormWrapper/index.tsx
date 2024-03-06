@@ -1,6 +1,7 @@
 import './FormWrapper.scss';
 
-function FormWrapper(props) {
+// TODO: Change from 'any' type
+function FormWrapper(props: any) {
   return (
     <form className="form-wrapper" {...props} noValidate></form>
   )

@@ -1,48 +1,51 @@
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
+import {Button, FormWrapper, InputField, StepWrapper} from '../components';
 
-import FormWrapper from '../components/FormWrapper/FormWrapper';
-import StepWrapper from '../components/StepWrapper/StepWrapper';
-import Button from '../components/Button/Button';
-import InputField from '../components/InputField/InputField';
 
 function PersonalInfo() {
-  const [state, setState] = useAppState();
+  const [state, setState]:any = useAppState();
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors }  } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     defaultValues: state,
-    mode: "onBlur"
+    mode: 'onBlur',
   });
-  const saveData = (data) => {
+
+  // TODO: Change from 'any' type
+  const saveData = (data: any) => {
     setState({ ...state, ...data });
-    navigate("/select-plan");
+    navigate('/select-plan');
   };
+  
   const registerOptions = {
-    name: { 
-      required: "Name is required"
+    name: {
+      required: 'Name is required',
     },
-    email: { 
+    email: {
       pattern: {
         value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
-        message: "Incorrect email format"
+        message: 'Incorrect email format',
       },
-      required: "Email is required"
+      required: 'Email is required',
     },
     tel: {
       pattern: {
         value: /^0([1-6][0-9]{8,10}|7[0-9]{9})$/,
-        message: "Incorrect phone number format"
+        message: 'Incorrect phone number format',
       },
-      required: "Phone number is required",      
-    }
-  }
-  
+      required: 'Phone number is required',
+    },
+  };
+
   return (
     <StepWrapper
-      title='Personal info'
-      desc='Please provide your name, email address, and phone number.'>
+      title="Personal info"
+      desc="Please provide your name, email address, and phone number.">
       <FormWrapper onSubmit={handleSubmit(saveData)}>
         <InputField
           error={errors?.name?.message}
@@ -51,7 +54,8 @@ function PersonalInfo() {
           name="name"
           options={registerOptions.name}
           type="text"
-          register={register} />
+          register={register}
+        />
 
         <InputField
           error={errors?.email?.message}
@@ -60,7 +64,8 @@ function PersonalInfo() {
           name="email"
           options={registerOptions.email}
           type="email"
-          register={register} />
+          register={register}
+        />
 
         <InputField
           error={errors?.tel?.message}
@@ -69,15 +74,18 @@ function PersonalInfo() {
           name="tel"
           options={registerOptions.tel}
           type="tel"
-          register={register} />
+          register={register}
+        />
 
         {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
-        <div className="form-wrapper__actions">        
-          <Button style="primary" type="submit">Next step</Button>
+        <div className="form-wrapper__actions">
+          <Button style="primary" type="submit">
+            Next step
+          </Button>
         </div>
       </FormWrapper>
     </StepWrapper>
-  )
+  );
 }
 
 export default PersonalInfo;

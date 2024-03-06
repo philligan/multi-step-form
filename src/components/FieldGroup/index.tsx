@@ -1,6 +1,7 @@
 import './FieldGroup.scss';
+import { FieldGroupProps } from "../../types";
 
-function FieldGroup({ children, direction, legend }) {
+function FieldGroup({ children, direction, legend }: FieldGroupProps) {
   const fieldsClassName = `choice-wrapper__fields choice-wrapper__fields--${direction}`;
   return (
     <fieldset className="choice-wrapper">

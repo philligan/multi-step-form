@@ -1,6 +1,7 @@
 import './PanelWrapper.scss';
 
-function PanelWrapper({ children }) {
+// TODO: Change from 'any' type
+function PanelWrapper({ children }: any) {
   return <div className="panel-wrapper">
     {children}
   </div>;
