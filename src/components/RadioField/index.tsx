@@ -6,7 +6,9 @@ function RadioField({ cost, icon, id, label, name, register, value }: RadioField
     return (
       label && (
         <label className="radio-field__label" htmlFor={id}>
-          {icon && <span dangerouslySetInnerHTML={{ __html: icon }} />}
+          {icon && (
+            <span className="radio-field__icon" dangerouslySetInnerHTML={{ __html: icon }} />
+          )}
           {label}
           <span className="radio-field__cost">{cost}</span>
         </label>

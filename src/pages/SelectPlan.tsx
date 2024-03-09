@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
 import { Button, FieldGroup, FormWrapper, RadioField, StepWrapper, Toggle } from '../components';
 import { SelectPlan as config } from '../config';
+import { CurrencyFormat } from '../helpers';
 
 function SelectPlan() {
   const [state, setState]: any = useAppState();
@@ -23,9 +24,24 @@ function SelectPlan() {
 
   function cost(field: any) {
     if (state.toggle === 'yearly') {
-      return field.costYearly;
+      return (
+        <>
+          <span>
+            {CurrencyFormat(field.costYearly)}
+            <abbr title="per">/</abbr>
+            <abbr title="year">yr</abbr>
+          </span>
+          <small>2 months free</small>
+        </>
+      );
     }
-    return field.costMonthly;
+    return (
+      <span>
+        {CurrencyFormat(field.costMonthly)}
+        <abbr title="per">/</abbr>
+        <abbr title="month">mo</abbr>
+      </span>
+    );
   }
 
   return (

@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
+
 interface RadioFieldProps {
-  cost: string;
+  cost: ReactElement;
   icon?: string;
   id: string;
   label: string;
