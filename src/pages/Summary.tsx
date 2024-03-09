@@ -1,4 +1,4 @@
-// import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 // import { useAppState } from '../state';
 import { Button, StepWrapper } from '../components';
 
@@ -9,9 +9,7 @@ function Summary() {
   return (
     <StepWrapper title="Finishing up" desc="Double-check everything looks OK before confirming.">
       <div className="form-wrapper__actions">
-        <Button style="secondary" type="button">
-          Go Back
-        </Button>
+        <Link to="/add-ons">Go Back</Link>
         <Button style="primary" type="button">
           Confirm
         </Button>

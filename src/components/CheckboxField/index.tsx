@@ -6,6 +6,7 @@ function CheckboxField({ cost, desc, id, label, name, register, value }: Checkbo
     return (
       label && (
         <label className="checkbox-field__label" htmlFor={id}>
+          <span className="checkbox-field__faux-box" />
           <span className="checkbox-field__label-inner">
             {label}
             <span className="checkbox-field__desc">{desc}</span>
