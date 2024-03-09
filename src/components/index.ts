@@ -3,6 +3,7 @@ import CheckboxField from './CheckboxField';
 import FieldGroup from './FieldGroup';
 import FormWrapper from './FormWrapper';
 import InputField from './InputField';
+import OrderSummary from './OrderSummary';
 import PanelWrapper from './PanelWrapper';
 import RadioField from './RadioField';
 import Stepper from './Stepper';
@@ -15,6 +16,7 @@ export {
   FieldGroup,
   FormWrapper,
   InputField,
+  OrderSummary,
   PanelWrapper,
   RadioField,
   Stepper,

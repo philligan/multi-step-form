@@ -35,6 +35,7 @@ function AddOns() {
               <CheckboxField
                 cost={cost(field)}
                 id={field.id}
+                key={field.id}
                 label={field.label}
                 desc={field.desc}
                 name={field.name}
