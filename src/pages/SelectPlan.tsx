@@ -36,6 +36,7 @@ function SelectPlan() {
             config.fields.map((field) => (
               <RadioField
                 cost={cost(field)}
+                icon={field.svgIcon}
                 id={field.id}
                 key={field.id}
                 label={field.label}

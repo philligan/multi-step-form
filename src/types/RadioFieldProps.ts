@@ -1,5 +1,6 @@
 interface RadioFieldProps {
   cost: string;
+  icon?: string;
   id: string;
   label: string;
   name: string;
