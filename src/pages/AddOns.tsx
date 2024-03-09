@@ -1,17 +1,14 @@
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
 import { Button, CheckboxField, FieldGroup, FormWrapper, StepWrapper } from '../components';
+import { AddOns as config } from '../config';
+import { CurrencyFormat } from '../helpers';
 
 function AddOns() {
-  const [state, setState]:any = useAppState();
+  const [state, setState]: any = useAppState();
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    // reset,
-    // formState: { errors }
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: state,
     mode: 'onSubmit',
   });
@@ -21,48 +18,36 @@ function AddOns() {
     setState({ ...state, ...data });
     navigate('/summary');
   };
-  
-  const resetData = () => {
-    // reset();
-    navigate('/select-plan');
-  };
+
+  function cost(field: any) {
+    if (state.toggle === 'yearly') {
+      return <>+{CurrencyFormat(field.costYearly)}</>;
+    }
+    return <>+{CurrencyFormat(field.costMonthly)}</>;
+  }
 
   return (
-    <StepWrapper title="Pick add-ons" desc="Add-ons help enhance your gaming experience.">
-      <FormWrapper onSubmit={handleSubmit(saveData)} onReset={resetData}>
+    <StepWrapper title={config.title} desc={config.desc}>
+      <FormWrapper onSubmit={handleSubmit(saveData)}>
         <FieldGroup direction="col" legend="Add-on options">
-          <CheckboxField
-            id="addons-online-service"
-            label="Online Service"
-            desc="Access to multiplayer games"
-            name="addOns"
-            register={register}
-            value="onlineService"
-          />
-          <CheckboxField
-            id="addons-larger-storage"
-            label="Larger Storage"
-            desc="Extra 1TB of cloud save"
-            name="addOns"
-            register={register}
-            value="largerStorage"
-          />
-          <CheckboxField
-            id="addons-customizable-profile"
-            label="Customizable Profile"
-            desc="Custom theme on your profile"
-            name="addOns"
-            register={register}
-            value="customizableProfile"
-          />
+          {config.fields &&
+            config.fields.map((field) => (
+              <CheckboxField
+                cost={cost(field)}
+                id={field.id}
+                label={field.label}
+                desc={field.desc}
+                name={field.name}
+                register={register}
+                value={field.value}
+              />
+            ))}
         </FieldGroup>
         {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
         <div className="form-wrapper__actions">
-          <Button style="secondary" type="reset">
-            Go Back
-          </Button>
+          <Link to="/select-plan">{config.ctaSecondary}</Link>
           <Button style="primary" type="submit">
-            Next step
+            {config.ctaPrimary}
           </Button>
         </div>
       </FormWrapper>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Toggle.scss';
 import { ToggleProps } from '../../types';
 
-function Toggle({ handleToggle, optionOne, optionTwo }: ToggleProps) {
+function Toggle({ handleToggle, optionOne, optionTwo, register }: ToggleProps) {
   const [activeId, setActiveId] = useState(optionOne.id);
 
   function labelCssClassName(optionId: string) {
@@ -24,6 +24,7 @@ function Toggle({ handleToggle, optionOne, optionTwo }: ToggleProps) {
       </label>
       <span className="toggle__wrapper">
         <input
+          {...register(optionOne.name)}
           onChange={changeHandler}
           aria-describedby="themeLabel"
           className="toggle__input toggle__input--one"
@@ -33,6 +34,7 @@ function Toggle({ handleToggle, optionOne, optionTwo }: ToggleProps) {
           value={optionOne.value}
         />
         <input
+          {...register(optionTwo.name)}
           onChange={changeHandler}
           aria-describedby="themeLabel"
           className="toggle__input toggle__input--two"

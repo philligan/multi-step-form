@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 interface ButtonProps {
+  onClick?: any;
   children: ReactNode;
   style: 'primary' | 'secondary';
   type: 'button' | 'submit' | 'reset' | undefined;

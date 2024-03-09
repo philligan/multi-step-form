@@ -1,7 +1,7 @@
 import './CheckboxField.scss';
-import { CheckboxProps } from "../../types";
+import { CheckboxProps } from '../../types';
 
-function CheckboxField({ desc, id, label, name, register, value }: CheckboxProps) {
+function CheckboxField({ cost, desc, id, label, name, register, value }: CheckboxProps) {
   function labelNode() {
     return (
       label && (
@@ -10,8 +10,7 @@ function CheckboxField({ desc, id, label, name, register, value }: CheckboxProps
             {label}
             <span className="checkbox-field__desc">{desc}</span>
           </span>
-          {/* TODO: Hook-up dynamic cost */}
-          <span className="checkbox-field__cost">+US$1</span>
+          <span className="checkbox-field__cost">{cost}</span>
         </label>
       )
     );

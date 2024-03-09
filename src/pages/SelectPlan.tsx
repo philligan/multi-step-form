@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
 import { Button, FieldGroup, FormWrapper, RadioField, StepWrapper, Toggle } from '../components';
 import { SelectPlan as config } from '../config';
@@ -28,8 +28,7 @@ function SelectPlan() {
         <>
           <span>
             {CurrencyFormat(field.costYearly)}
-            <abbr title="per">/</abbr>
-            <abbr title="year">yr</abbr>
+            <abbr title="per year">/yr</abbr>
           </span>
           <small>2 months free</small>
         </>
@@ -38,8 +37,7 @@ function SelectPlan() {
     return (
       <span>
         {CurrencyFormat(field.costMonthly)}
-        <abbr title="per">/</abbr>
-        <abbr title="month">mo</abbr>
+        <abbr title="per month">/mo</abbr>
       </span>
     );
   }
@@ -66,12 +64,11 @@ function SelectPlan() {
           handleToggle={handleToggle}
           optionOne={config.toggle.optionOne}
           optionTwo={config.toggle.optionTwo}
+          register={register}
         />
         {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
         <div className="form-wrapper__actions">
-          <Button style="secondary" type="button">
-            {config.ctaSecondary}
-          </Button>
+          <Link to="/">{config.ctaSecondary}</Link>
           <Button style="primary" type="submit">
             {config.ctaPrimary}
           </Button>
