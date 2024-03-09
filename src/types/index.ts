@@ -6,6 +6,7 @@ import InputFieldProps from './InputFieldProps';
 import RadioFieldProps from './RadioFieldProps';
 import StepProps from './StepProps';
 import StepWrapperProps from './StepWrapperProps';
+import ToggleProps from './ToggleProps';
 
 export type {
   AppProviderProps,
@@ -16,4 +17,5 @@ export type {
   RadioFieldProps,
   StepProps,
   StepWrapperProps,
+  ToggleProps,
 };

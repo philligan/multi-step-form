@@ -1,13 +1,13 @@
 import './RadioField.scss';
 import { RadioFieldProps } from '../../types';
 
-function RadioField({ id, label, name, register, value }: RadioFieldProps) {
+function RadioField({ cost, id, label, name, register, value }: RadioFieldProps) {
   function labelNode() {
     return (
       label && (
         <label className="radio-field__label" htmlFor={id}>
           {/* TODO: Add SVG component or sprite */}
-          <svg
+          {/* <svg
             className="radio-field__icon"
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -20,10 +20,9 @@ function RadioField({ id, label, name, register, value }: RadioFieldProps) {
                 fill-rule="nonzero"
                 d="M24.995 18.005h-3.998v5.998h-2v-5.998H15a1 1 0 0 0-1 1V29a1 1 0 0 0 1 1h9.995a1 1 0 0 0 1-1v-9.995a1 1 0 0 0-1-1Zm-5.997 8.996h-2v-1.999h2v2Zm2-11.175a2.999 2.999 0 1 0-2 0v2.18h2v-2.18Z"></path>
             </g>
-          </svg>
+          </svg> */}
           {label}
-          {/* TODO: Hook-up dynamic cost */}
-          <span className="radio-field__cost">US$9/mo</span>
+          <span className="radio-field__cost">{cost}</span>
         </label>
       )
     );

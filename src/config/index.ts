@@ -1,3 +1,4 @@
-import PersonalInfo from '@/config/PersonalInfo';
+import PersonalInfo from './PersonalInfo';
+import SelectPlan from './SelectPlan';
 
-export { PersonalInfo };
+export { PersonalInfo, SelectPlan };

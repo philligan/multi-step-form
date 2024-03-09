@@ -1,58 +1,62 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
-import {Button,FieldGroup, FormWrapper,  RadioField, StepWrapper} from '../components';
+import { Button, FieldGroup, FormWrapper, RadioField, StepWrapper, Toggle } from '../components';
+import { SelectPlan as config } from '../config';
 
 function SelectPlan() {
-  const [state, setState]:any = useAppState();
+  const [state, setState]: any = useAppState();
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    // formState: { errors }
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: state,
     mode: 'onSubmit',
   });
-  
   // TODO: Change from 'any' type
   const saveData = (data: any) => {
     setState({ ...state, ...data });
     navigate('/add-ons');
   };
-  const resetData = () => {
-    reset();
-    navigate('/');
-  };
+
+  function handleToggle(event: React.ChangeEvent<HTMLInputElement>) {
+    setState({ ...state, toggle: event.target.value });
+  }
+
+  function cost(field: any) {
+    if (state.toggle === 'yearly') {
+      return field.costYearly;
+    }
+    return field.costMonthly;
+  }
 
   return (
-    <StepWrapper title="Select your plan" desc="You have the option of monthly or yearly billing.">
-      <FormWrapper onSubmit={handleSubmit(saveData)} onReset={resetData}>
-        <FieldGroup legend="Plan options" direction="row">
-          <RadioField
-            id="plan-arcade"
-            label="Arcade"
-            name="plan"
-            register={register}
-            value="arcade"
-          />
-          <RadioField
-            id="plan-advanced"
-            label="Advanced"
-            name="plan"
-            register={register}
-            value="advanced"
-          />
-          <RadioField id="plan-pro" label="Pro" name="plan" register={register} value="pro" />
+    <StepWrapper title={config.title} desc={config.desc}>
+      <FormWrapper onSubmit={handleSubmit(saveData)}>
+        <FieldGroup legend={config.fieldLegend} direction="row">
+          {config.fields &&
+            config.fields.map((field) => (
+              <RadioField
+                cost={cost(field)}
+                id={field.id}
+                key={field.id}
+                label={field.label}
+                name={field.name}
+                register={register}
+                value={field.value}
+              />
+            ))}
         </FieldGroup>
+        <Toggle
+          handleToggle={handleToggle}
+          optionOne={config.toggle.optionOne}
+          optionTwo={config.toggle.optionTwo}
+        />
         {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
         <div className="form-wrapper__actions">
-          <Button style="secondary" type="reset">
-            Go Back
+          <Button style="secondary" type="button">
+            {config.ctaSecondary}
           </Button>
           <Button style="primary" type="submit">
-            Next step
+            {config.ctaPrimary}
           </Button>
         </div>
       </FormWrapper>

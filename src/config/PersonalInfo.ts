@@ -9,6 +9,7 @@ const PersonalInfo = {
       options: {
         required: 'Name is required',
       },
+      type: 'text',
     },
     {
       id: 'email',
@@ -21,11 +22,12 @@ const PersonalInfo = {
         },
         required: 'Email is required',
       },
+      type: 'email',
     },
     {
-      id: 'name',
-      label: 'Name',
-      name: 'name',
+      id: 'tel',
+      label: 'Phone',
+      name: 'tel',
       options: {
         pattern: {
           value: /^0([1-6][0-9]{8,10}|7[0-9]{9})$/,
@@ -33,6 +35,7 @@ const PersonalInfo = {
         },
         required: 'Phone number is required',
       },
+      type: 'tel',
     },
   ],
   title: 'Personal info',

@@ -7,6 +7,7 @@ import PanelWrapper from './PanelWrapper';
 import RadioField from './RadioField';
 import Stepper from './Stepper';
 import StepWrapper from './StepWrapper';
+import Toggle from './Toggle';
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   RadioField,
   Stepper,
   StepWrapper,
+  Toggle,
 };

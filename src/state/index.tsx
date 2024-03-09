@@ -5,7 +5,8 @@ export const AppStateContext = createContext({});
  
 export function AppProvider({ children }: AppProviderProps) {
   const value = useState({
-    plan: 'arcade'
+    plan: 'arcade',
+    toggle: 'monthly'
   });
   return (
     <AppStateContext.Provider value={value}>

@@ -1,0 +1,94 @@
+@import '../../styles/functions';
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-secondary-lightest);
+  border-radius: 8px; // TODO: Add custom prop
+  transition: all 0.3s ease-out 0s;
+}
+
+.toggle__label {
+  color: var(--color-grey);
+  font-size: px-to-rem(16);
+  font-weight: var(--font-weight-semi);
+  cursor: pointer;
+  transition: all 0.3s ease-out 0s;
+
+  &:first-of-type {
+    padding-inline-end: 1ch;
+  }
+
+  &:last-of-type {
+    padding-inline-start: 1ch;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--active {
+    color: var(--color-primary);
+  }
+}
+
+.toggle__wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: px-to-rem(32);
+  width: px-to-rem(48);
+}
+
+.toggle__input {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 0;
+  height: 100%;
+  width: 50%;
+  opacity: 0;
+  cursor: pointer;
+
+  &:focus ~ .toggle__switcher {
+    outline: 2px dashed var(--color-accent-three);
+  }
+}
+
+.toggle__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  height: px-to-rem(32);
+  width: px-to-rem(48);
+  background-color: var(--color-primary);
+  border-radius: px-to-rem(16);
+  transition: all 0.15s ease-out;
+}
+
+.toggle__switcher {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  left: 6px;
+  z-index: 1;
+  display: block;
+  height: px-to-rem(20);
+  width: px-to-rem(20);
+  background-color: var(--color-white);
+  border-radius: 50%;
+  transition:
+    color 0.15s ease-out,
+    right 0.15s ease-out,
+    left 0.15s ease-out;
+  transform: translateY(-50%);
+
+  .toggle__input--two:checked ~ & {
+    right: 6px;
+    left: 50%;
+  }
+}
