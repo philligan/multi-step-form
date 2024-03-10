@@ -1,7 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
-import { Button, CheckboxField, FieldGroup, FormWrapper, StepWrapper } from '../components';
+import {
+  ActionWrapper,
+  Button,
+  CheckboxField,
+  FieldGroup,
+  FormWrapper,
+  StepWrapper,
+} from '../components';
 import { AddOns as config } from '../config';
 import { CurrencyFormat } from '../helpers';
 import { FieldProps } from '../types';
@@ -43,13 +50,12 @@ function AddOns() {
               />
             ))}
         </FieldGroup>
-        {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
-        <div className="form-wrapper__actions">
+        <ActionWrapper>
           <Link to="/select-plan">{config.ctaSecondary}</Link>
           <Button style="primary" type="submit">
             {config.ctaPrimary}
           </Button>
-        </div>
+        </ActionWrapper>
       </FormWrapper>
     </StepWrapper>
   );

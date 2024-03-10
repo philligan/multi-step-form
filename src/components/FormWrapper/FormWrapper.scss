@@ -10,16 +10,3 @@
     height: 100%;
   }
 }
-
-.form-wrapper__actions {
-  display: flex;
-  justify-content: space-between;
-
-  &:has(:only-child) {
-    justify-content: flex-end;
-  }
-
-  @media (width > $mq-lg) {
-    margin-top: auto;
-  }
-}

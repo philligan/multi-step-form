@@ -1,0 +1,14 @@
+@import '../../styles/breakpoints';
+
+.action-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  &:has(:only-child) {
+    justify-content: flex-end;
+  }
+
+  @media (width > $mq-lg) {
+    margin-top: auto;
+  }
+}

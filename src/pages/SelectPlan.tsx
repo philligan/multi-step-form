@@ -1,7 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
-import { Button, FieldGroup, FormWrapper, RadioField, StepWrapper, Toggle } from '../components';
+import {
+  ActionWrapper,
+  Button,
+  FieldGroup,
+  FormWrapper,
+  RadioField,
+  StepWrapper,
+  Toggle,
+} from '../components';
 import { SelectPlan as config } from '../config';
 import { CurrencyFormat } from '../helpers';
 import { FieldProps } from '../types';
@@ -66,13 +74,12 @@ function SelectPlan() {
           optionTwo={config.toggle.optionTwo}
           register={register}
         />
-        {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
-        <div className="form-wrapper__actions">
+        <ActionWrapper>
           <Link to="/">{config.ctaSecondary}</Link>
           <Button style="primary" type="submit">
             {config.ctaPrimary}
           </Button>
-        </div>
+        </ActionWrapper>
       </FormWrapper>
     </StepWrapper>
   );

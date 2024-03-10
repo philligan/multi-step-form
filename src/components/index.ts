@@ -1,3 +1,4 @@
+import ActionWrapper from './ActionWrapper';
 import Button from './Button';
 import CheckboxField from './CheckboxField';
 import FieldGroup from './FieldGroup';
@@ -11,6 +12,7 @@ import StepWrapper from './StepWrapper';
 import Toggle from './Toggle';
 
 export {
+  ActionWrapper,
   Button,
   CheckboxField,
   FieldGroup,

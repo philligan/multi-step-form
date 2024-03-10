@@ -5,7 +5,7 @@ import {
   SelectPlan as SelectPlanConfig,
   Summary as config,
 } from '../config';
-import { Button, OrderSummary, StepWrapper } from '../components';
+import { ActionWrapper, Button, OrderSummary, StepWrapper } from '../components';
 import { FieldProps } from '../types';
 
 function Summary() {
@@ -47,12 +47,12 @@ function Summary() {
           totalLabel={config.total}
         />
       )}
-      <div className="form-wrapper__actions">
+      <ActionWrapper>
         <Link to="/add-ons">{config.ctaSecondary}</Link>
         <Button style="primary" type="button">
           {config.ctaPrimary}
         </Button>
-      </div>
+      </ActionWrapper>
     </StepWrapper>
   );
 }

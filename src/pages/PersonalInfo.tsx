@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAppState } from '../state';
-import { Button, FormWrapper, InputField, StepWrapper } from '../components';
+import { ActionWrapper, Button, FormWrapper, InputField, StepWrapper } from '../components';
 import { PersonalInfo as config } from '../config';
 
 function PersonalInfo() {
@@ -36,12 +36,11 @@ function PersonalInfo() {
               register={register}
             />
           ))}
-        {/* TODO: Move actions wrapper elsewhere - maybe slot? */}
-        <div className="form-wrapper__actions">
+        <ActionWrapper>
           <Button style="primary" type="submit">
             {config.ctaPrimary}
           </Button>
-        </div>
+        </ActionWrapper>
       </FormWrapper>
     </StepWrapper>
   );
