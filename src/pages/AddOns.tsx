@@ -4,6 +4,7 @@ import { useAppState } from '../state';
 import { Button, CheckboxField, FieldGroup, FormWrapper, StepWrapper } from '../components';
 import { AddOns as config } from '../config';
 import { CurrencyFormat } from '../helpers';
+import { FieldProps } from '../types';
 
 function AddOns() {
   const [state, setState]: any = useAppState();
@@ -12,14 +13,12 @@ function AddOns() {
     defaultValues: state,
     mode: 'onSubmit',
   });
-
-  // TODO: Change from 'any' type
-  const saveData = (data: any) => {
+  const saveData = (data: {}) => {
     setState({ ...state, ...data });
     navigate('/summary');
   };
 
-  function cost(field: any) {
+  function cost(field: FieldProps) {
     if (state.toggle === 'yearly') {
       return <>+{CurrencyFormat(field.costYearly)}</>;
     }

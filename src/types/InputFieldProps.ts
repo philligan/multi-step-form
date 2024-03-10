@@ -1,13 +1,20 @@
-// import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
+interface PatternProps {
+  value?: RegExp;
+  message?: string;
+}
+
+interface InputOptionsProps {
+  pattern?: PatternProps;
+  required: string;
+}
 
 interface InputFieldProps {
-  // error: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
   error: any; // TODO: Change from 'any' type
   id: string;
   label: string;
   name: string;
-  options: any; // TODO: Change from 'any' type
-  register: any; // TODO: Change from 'any' type
+  options: InputOptionsProps;
+  register: any;
   type: 'text' | 'email' | 'tel' | undefined;
 }
 

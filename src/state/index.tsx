@@ -6,7 +6,10 @@ export const AppStateContext = createContext({});
 export function AppProvider({ children }: AppProviderProps) {
   const value = useState({
     addon: [],
+    email: '',
+    name: '',
     plan: 'arcade',
+    tel: '',
     toggle: 'monthly',
   });
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

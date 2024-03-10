@@ -1,24 +1,24 @@
 @use 'sass:math';
 @import '../../styles/breakpoints';
-@import "../../styles/functions";
+@import '../../styles/functions';
 
 .stepper {
   display: flex;
   gap: var(--spacing-lg);
   justify-content: center;
-  margin:   0;
+  margin: 0;
   padding: var(--spacing-xl) 0 px-to-rem(100);
   width: 100%;
   background-image: url('../../../public/img/bg-sidebar-mobile.svg');
   background-size: cover;
-  
+
   @media (width > $mq-lg) {
-    flex-direction: column;    
+    flex-direction: column;
     justify-content: flex-start;
     padding: var(--spacing-xxl) var(--spacing-xl);
     height: px-to-rem(568);
     width: px-to-rem(274);
-    background-image: url('../../../public/img/bg-sidebar-desktop.svg')
+    background-image: url('../../../public/img/bg-sidebar-desktop.svg');
   }
 }
 
@@ -40,20 +40,20 @@
     color: var(--color-white);
   }
 
-  &[aria-current="complete"]::before,
-  &[aria-current="step"]::before  {
+  &--complete::before,
+  &[aria-current='step']::before {
     background-color: var(--color-accent-light);
     border-color: var(--color-accent-light);
     color: var(--color-primary);
   }
 
-  &[aria-current="complete"]::before  {
+  &--complete::before {
     opacity: 0.5;
   }
 
-  @media (width > $mq-lg) {    
+  @media (width > $mq-lg) {
     display: flex;
-    gap: var(--spacing-md)
+    gap: var(--spacing-md);
   }
 }
 
@@ -64,7 +64,7 @@
   color: var(--color-white);
   text-transform: uppercase;
 
-  @media (width < $mq-lg) {    
+  @media (width < $mq-lg) {
     // TODO: Make screen reader visible for mobile
     display: none;
   }

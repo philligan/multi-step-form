@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 
 interface CheckboxProps {
   cost: ReactElement;
@@ -6,7 +7,7 @@ interface CheckboxProps {
   id: string;
   label: string;
   name: string;
-  register: any;
+  register: UseFormRegister<FieldValues>;
   value: string;
 }
 

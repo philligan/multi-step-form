@@ -4,6 +4,7 @@ import { useAppState } from '../state';
 import { Button, FieldGroup, FormWrapper, RadioField, StepWrapper, Toggle } from '../components';
 import { SelectPlan as config } from '../config';
 import { CurrencyFormat } from '../helpers';
+import { FieldProps } from '../types';
 
 function SelectPlan() {
   const [state, setState]: any = useAppState();
@@ -12,8 +13,7 @@ function SelectPlan() {
     defaultValues: state,
     mode: 'onSubmit',
   });
-  // TODO: Change from 'any' type
-  const saveData = (data: any) => {
+  const saveData = (data: {}) => {
     setState({ ...state, ...data });
     navigate('/add-ons');
   };
@@ -22,7 +22,7 @@ function SelectPlan() {
     setState({ ...state, toggle: event.target.value });
   }
 
-  function cost(field: any) {
+  function cost(field: FieldProps) {
     if (state.toggle === 'yearly') {
       return (
         <>

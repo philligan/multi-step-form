@@ -6,23 +6,25 @@ import {
   Summary as config,
 } from '../config';
 import { Button, OrderSummary, StepWrapper } from '../components';
+import { FieldProps } from '../types';
 
 function Summary() {
-  const [state, setState]: any = useAppState();
-
+  const [state]: any = useAppState();
   const selectedPlan = SelectPlanConfig.fields.find((field) => field.value === state.plan);
   const planCadence =
     state.toggle === 'monthly'
       ? SelectPlanConfig.toggle.optionOne.label
       : SelectPlanConfig.toggle.optionTwo.label;
-  const planCost: number | undefined =
-    state.toggle === 'monthly' ? selectedPlan?.costMonthly : selectedPlan?.costYearly;
   const planLabel = `${selectedPlan?.label} (${planCadence})`;
+  let planCost = 0;
+  if (selectedPlan) {
+    planCost = state.toggle === 'monthly' ? selectedPlan.costMonthly : selectedPlan.costYearly;
+  }
 
   function addOns() {
     if (state.addon.length) {
-      return state.addon.map((value: any) => {
-        const field = AddOnsConfig.fields.find((field) => field.value === value);
+      return state.addon.map((value: string) => {
+        const field = AddOnsConfig.fields.find((field: FieldProps) => field.value === value);
         if (field) {
           return {
             label: field.label,
@@ -37,7 +39,14 @@ function Summary() {
 
   return (
     <StepWrapper title={config.title} desc={config.desc}>
-      <OrderSummary addOns={addOns} planCost={planCost} planLabel={planLabel} />
+      {selectedPlan && (
+        <OrderSummary
+          addOns={addOns}
+          planCost={planCost}
+          planLabel={planLabel}
+          totalLabel={config.total}
+        />
+      )}
       <div className="form-wrapper__actions">
         <Link to="/add-ons">{config.ctaSecondary}</Link>
         <Button style="primary" type="button">

@@ -1,5 +1,82 @@
+@use 'sass:math';
+@import '../../styles/breakpoints';
+@import '../../styles/functions';
+
 .order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.order-summary__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: 0;
   padding: var(--spacing-lg);
   background-color: var(--color-secondary-lightest);
   border-radius: 8px;
+}
+
+.order-summary__mast {
+  display: flex;
+  margin: 0;
+  font-size: px-to-rem(18);
+}
+
+.order-summary__plan-label {
+  display: block;
+  flex: 1 0 auto;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semi);
+}
+
+.order-summary__plan-cost {
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.order-summary__addons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin: 0;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-bg-border);
+}
+
+.order-summary__addon-item {
+  display: flex;
+  margin: 0;
+  font-size: px-to-rem(16);
+}
+
+.order-summary__addon-label {
+  flex: 1 0 auto;
+  color: var(--color-grey);
+}
+
+.order-summary__addon-cost {
+  flex: 0 0 auto;
+  color: var(--color-primary);
+}
+
+.order-summary__foot {
+  display: flex;
+  margin: 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.order-summary__foot-label {
+  flex: 1 0 auto;
+  color: var(--color-grey);
+}
+
+.order-summary__foot-cost {
+  flex: 0 0 auto;
+  color: var(--color-accent-one);
+  font-size: px-to-rem(18);
+  font-weight: var(--font-weight-bold);
 }
