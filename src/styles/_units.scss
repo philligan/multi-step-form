@@ -1,6 +1,8 @@
 @import './functions';
 
-:root{
+:root {
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
   --spacing-xs: #{px-to-rem(3)};
   --spacing-sm: #{px-to-rem(6)};
   --spacing-md: #{px-to-rem(12)};

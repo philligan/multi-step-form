@@ -15,7 +15,7 @@
   margin: 0;
   padding: var(--spacing-lg);
   background-color: var(--color-secondary-lightest);
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
 }
 
 .order-summary__mast {

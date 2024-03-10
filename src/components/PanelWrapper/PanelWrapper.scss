@@ -1,5 +1,5 @@
 @import '../../styles/breakpoints';
-@import "../../styles/functions";
+@import '../../styles/functions';
 
 .panel-wrapper {
   @media (width > $mq-lg) {
@@ -9,8 +9,7 @@
     width: 100%;
     max-width: px-to-rem(940);
     background-color: var(--color-white);
-    border-radius: 10px;
+    border-radius: var(--border-radius-md);
     place-items: center;
   }
 }
-

@@ -1,12 +1,10 @@
 @import '../../styles/functions';
+@import '../../styles/mixins';
 
 .input-field {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-}
-
-.input-field__label {
 }
 
 .input-field__error {
@@ -21,12 +19,16 @@
   padding: var(--spacing-md);
   width: 100%;
   border: 1px solid var(--border-color, grey);
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   color: var(--color-primary);
   font-size: px-to-rem(16);
   font-weight: var(--font-weight-medium, 400);
 
   &--error {
     --border-color: var(--color-error);
+  }
+
+  &:focus-visible {
+    @include focus-outline;
   }
 }

@@ -9,7 +9,7 @@ interface InputOptionsProps {
 }
 
 interface InputFieldProps {
-  error: any; // TODO: Change from 'any' type
+  error?: any;
   id: string;
   label: string;
   name: string;

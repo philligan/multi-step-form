@@ -1,6 +1,7 @@
 @use 'sass:math';
 @import '../../styles/breakpoints';
 @import '../../styles/functions';
+@import '../../styles/mixins';
 
 .stepper {
   display: flex;
@@ -65,8 +66,7 @@
   text-transform: uppercase;
 
   @media (width < $mq-lg) {
-    // TODO: Make screen reader visible for mobile
-    display: none;
+    @include visually-hidden;
   }
 }
 
