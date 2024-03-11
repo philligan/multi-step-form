@@ -2,6 +2,8 @@
 @import '../../styles/functions';
 
 .panel-wrapper {
+  margin-bottom: var(--spacing-lg);
+
   @media (width > $mq-lg) {
     display: grid;
     grid-template-columns: px-to-rem(274) 2fr;
