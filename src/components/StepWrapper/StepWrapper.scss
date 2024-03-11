@@ -14,10 +14,16 @@
 
   @media (width > $mq-lg) {
     margin: 0;
-    padding: var(--spacing-xl) var(--spacing-xxl);
+    padding: var(--spacing-xl) var(--spacing-xxxl);
     height: 100%;
     width: 100%;
   }
+}
+
+.step-wrapper__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .step-wrapper__title {
@@ -27,4 +33,5 @@
 
 .step-wrapper__desc {
   margin: 0;
+  color: var(--color-grey);
 }
