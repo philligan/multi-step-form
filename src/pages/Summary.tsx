@@ -5,7 +5,7 @@ import {
   SelectPlan as SelectPlanConfig,
   Summary as config,
 } from '../config';
-import { ActionWrapper, Button, OrderSummary, StepWrapper } from '../components';
+import { ActionWrapper, Button, Hyperlink, OrderSummary, StepWrapper } from '../components';
 import { FieldProps } from '../types';
 
 function Summary() {
@@ -48,7 +48,7 @@ function Summary() {
         />
       )}
       <ActionWrapper>
-        <Link to="/add-ons">{config.ctaSecondary}</Link>
+        <Hyperlink href="/add-ons">{config.ctaSecondary}</Hyperlink>
         <Button style="primary" type="button">
           {config.ctaPrimary}
         </Button>

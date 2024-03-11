@@ -6,6 +6,7 @@ import {
   Button,
   FieldGroup,
   FormWrapper,
+  Hyperlink,
   RadioField,
   StepWrapper,
   Toggle,
@@ -75,7 +76,7 @@ function SelectPlan() {
           register={register}
         />
         <ActionWrapper>
-          <Link to="/">{config.ctaSecondary}</Link>
+          <Hyperlink href="/">{config.ctaSecondary}</Hyperlink>
           <Button style="primary" type="submit">
             {config.ctaPrimary}
           </Button>

@@ -1,4 +1,21 @@
+@use 'sass:math';
 @import './functions';
+
+@mixin button-styles {
+  margin: 0;
+  border: 0;
+  border-radius: var(--border-radius-md);
+  font-family: Ubuntu, sans-serif;
+  font-size: px-to-rem(16);
+  font-weight: var(--font-weight-semi);
+  line-height: math.div(18, 16);
+  cursor: pointer;
+  padding-block: var(--spacing-md);
+
+  &:focus-visible {
+    @include focus-outline;
+  }
+}
 
 @mixin choice-label {
   display: flex;

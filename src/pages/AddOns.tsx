@@ -7,6 +7,7 @@ import {
   CheckboxField,
   FieldGroup,
   FormWrapper,
+  Hyperlink,
   StepWrapper,
 } from '../components';
 import { AddOns as config } from '../config';
@@ -51,7 +52,7 @@ function AddOns() {
             ))}
         </FieldGroup>
         <ActionWrapper>
-          <Link to="/select-plan">{config.ctaSecondary}</Link>
+          <Hyperlink href="/select-plan">{config.ctaSecondary}</Hyperlink>
           <Button style="primary" type="submit">
             {config.ctaPrimary}
           </Button>

@@ -4,6 +4,7 @@ import CheckboxProps from './CheckboxProps';
 import FieldProps from './FieldProps';
 import FieldGroupProps from './FieldGroupProps';
 import InputFieldProps from './InputFieldProps';
+import LinkProps from './LinkProps';
 import { AddOnProps, OrderSummaryProps } from './OrderSummaryProps';
 import RadioFieldProps from './RadioFieldProps';
 import StepProps from './StepProps';
@@ -18,6 +19,7 @@ export type {
   FieldProps,
   FieldGroupProps,
   InputFieldProps,
+  LinkProps,
   OrderSummaryProps,
   RadioFieldProps,
   StepProps,

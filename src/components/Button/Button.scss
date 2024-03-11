@@ -1,40 +1,14 @@
-@use 'sass:math';
-@import '../../styles/functions';
 @import '../../styles/mixins';
 
 .button {
-  margin: 0;
-  padding: 0;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border: 0;
-  border-radius: var(--border-radius-md);
-  font-family: Ubuntu, sans-serif;
-  font-size: px-to-rem(16);
-  font-weight: var(--font-weight-semi);
-  line-height: math.div(18, 16);
-  cursor: pointer;
+  @include button-styles;
 
-  &--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-inline: var(--spacing-lg);
 
-    &:hover,
-    &:active {
-      background-color: var(--color-secondary-button);
-    }
-  }
-
-  &--secondary {
-    background-color: transparent;
-    color: var(--color-grey);
-
-    &:hover,
-    &:active {
-      text-decoration: underline;
-    }
-  }
-
-  &:focus-visible {
-    @include focus-outline;
+  &:hover,
+  &:active {
+    background-color: var(--color-secondary-button);
   }
 }

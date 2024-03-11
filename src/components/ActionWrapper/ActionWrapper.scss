@@ -11,4 +11,13 @@
   @media (width > $mq-lg) {
     margin-top: auto;
   }
+
+  // @media (width < $mq-lg) {
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   padding: var(--spacing-lg) var(--spacing-xl);
+  //   width: 100%;
+  //   background: var(--color-white);
+  // }
 }

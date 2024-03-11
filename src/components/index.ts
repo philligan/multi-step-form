@@ -3,6 +3,7 @@ import Button from './Button';
 import CheckboxField from './CheckboxField';
 import FieldGroup from './FieldGroup';
 import FormWrapper from './FormWrapper';
+import Hyperlink from './Hyperlink';
 import InputField from './InputField';
 import OrderSummary from './OrderSummary';
 import PanelWrapper from './PanelWrapper';
@@ -17,6 +18,7 @@ export {
   CheckboxField,
   FieldGroup,
   FormWrapper,
+  Hyperlink,
   InputField,
   OrderSummary,
   PanelWrapper,
